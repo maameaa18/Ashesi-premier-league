@@ -4,6 +4,7 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Playerselection {
     public static void main(String[] args) {
+    //Declaration of variables
         String name;
         int age;
         double height;
@@ -22,6 +23,7 @@ public class Playerselection {
         final double CENTIMETERS=100;
         double heightincm;
         int roundedheight;
+        //accepting input from the user
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your name: ");
         name = input.nextLine();
@@ -40,6 +42,7 @@ public class Playerselection {
         Jerseynumber = input.nextInt();
         System.out.print("Enter your position: ");
         position = input.next();
+        //Checking the category in which the player falls
         if(age<20) {
             category = "Rising star";
         }else
@@ -48,18 +51,21 @@ public class Playerselection {
         }else {
             category = "veteran";
         }
+        //checking to see if the player is an attacker
         if (position.equals("Attacker")) {
             isattacker = true;
         }else {
             isattacker = false;
         }
-         if(age<18&&age<=35) {
+         //checking the eligibility of the player
+        if(age<18&&age<=35) {
              System.out.println("You are eligible");
          }
              else {
              System.out.println("You are not eligible");
          }
-             switch(Jerseynumber) {
+             //finding the position of nthe player based on their jersey number
+        switch(Jerseynumber) {
                  case 1:
                      lineupdecision = "goalkeeper";
                      break;
@@ -84,7 +90,8 @@ public class Playerselection {
                  default:
                      lineupdecision = "player position not known";
              }
-             if("Prime player".equals(category)) {
+             //checking if the player's category is prime player
+        if("Prime player".equals(category)) {
                  if (roundedweight < 80) {
                      System.out.println("You are in the starting line up");
                  } else {
@@ -95,7 +102,7 @@ public class Playerselection {
              }
 
 
-
+//making a final decision to check if the player will play based on their eligibility
              finaldecision=(iseligible?"Play":"Rest");
 
                 System.out.println("Player report");
@@ -106,7 +113,7 @@ public class Playerselection {
 
                 System.out.println("Height: "+roundedheight);
 
-                System.out.println("weight"+roundedweight);
+                System.out.println("weight:"+roundedweight);
 
                 System.out.println("Jerseynumber: "+Jerseynumber);
 
